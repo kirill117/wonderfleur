@@ -1,0 +1,7 @@
+C:\TEMPLATE\WonderFleur9\WonderFleur9\obj\Debug\WonderFleur9.dll.licenses
+C:\TEMPLATE\WonderFleur9\WonderFleur9\bin\WonderFleur9.dll
+C:\TEMPLATE\WonderFleur9\WonderFleur9\bin\WonderFleur9.pdb
+C:\TEMPLATE\WonderFleur9\WonderFleur9\bin\HighslideImage.pdb
+C:\TEMPLATE\WonderFleur9\WonderFleur9\obj\Debug\WonderFleur9.dll
+C:\TEMPLATE\WonderFleur9\WonderFleur9\obj\Debug\WonderFleur9.pdb
+C:\Template\WonderFleur9\WonderFleur9\obj\Debug\WonderFleur9.csprojResolveAssemblyReference.cache

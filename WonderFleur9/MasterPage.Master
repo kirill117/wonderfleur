@@ -1,0 +1,462 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="WonderFleur9.MasterPage" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dxp" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxNavBar" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.ASPxEditors.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.ASPxTreeList.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxTreeList" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v11.2, Version=11.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Питомник британских кошек Wonderfleur*Ru</title>
+    <meta name="Description" content="Продажа британских короткошерстных кошек и котят"/>
+    <meta name="Keywords" content="продажа котят британские короткошерстные кошки купить"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style2
+        {
+            padding: 0px; 
+            margin: 0px; 
+            border-spacing: 0px; 
+            background-color: #ECFFEC;
+        }
+        .style2_footer
+        {
+            padding: 0px; 
+            margin: 0px; 
+            border-spacing: 0px; 
+            background-color: #ECFFEC;
+            background-image: url(Images/bg_t.jpg); 
+            background-repeat: repeat-x
+        }
+        .style3
+        {
+            width: 100%;
+        }
+        .menuRootItem
+        {
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 12px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .menuRootItem:hover
+        {
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 12px;
+            color: Green;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="padding: 0px; margin: 0px; background-position: 100% 100%; background-attachment: fixed; background-color: #F4F4F4;">
+<center>
+    <form id="form1" runat="server">
+        <table align="center" style="position: relative; width:80%" border="0" 
+            cellpadding="0" cellspacing="0" frame="border">
+            <tr style="background-position: left; background-image: url(Images/menuBack.png); background-repeat: no-repeat;" height="59">
+                <td colspan="2" align="left">
+                    <dx:ASPxMenu ID="ASPxMenu1" runat="server" 
+                        ClientIDMode="AutoID" 
+                        SpriteCssFilePath="~/App_Themes/RedWine/{0}/sprite.css" 
+                        BackColor="Transparent" ItemSpacing="30px">
+                        <Items>
+                            <dx:MenuItem Text="Главная" NavigateUrl="~/Main.aspx" Name="Main">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Новости" NavigateUrl="~/TopNews.aspx?mode=0" Name="News">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Выставки" NavigateUrl="~/TopNews.aspx?Mode=1" Name="Shows">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Котята" NavigateUrl="~/Kittens.aspx" Name="Kittens">
+                            </dx:MenuItem>
+                            <dx:MenuItem Name="Gallery" NavigateUrl="~/Galleries.aspx" Text="Галерея">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Контакты" Name="Contacts" 
+                                NavigateUrl="~/ContextPage.aspx?contextId=10">
+                            </dx:MenuItem>
+                            <dx:MenuItem Name="admin" Text="Администрирование">
+                                <Items>
+                                    <dx:MenuItem Name="admin_news" Text="Новости и выставки" 
+                                        NavigateUrl="~/TopNews.aspx">
+                                        <Items>
+                                            <dx:MenuItem NavigateUrl="~/TopNews.aspx?mode=0" Text="Добавить новость">
+                                            </dx:MenuItem>
+                                            <dx:MenuItem NavigateUrl="~/TopNews.aspx?Mode=1" Text="Добавить выставку">
+                                            </dx:MenuItem>
+                                        </Items>
+                                    </dx:MenuItem>
+                                    <dx:MenuItem Name="admin_cats" Text="Питомцы">
+                                        <Items>
+                                            <dx:MenuItem NavigateUrl="~/Persons.aspx?type=0&amp;mode=1" 
+                                                Text="Добавить кота">
+                                            </dx:MenuItem>
+                                            <dx:MenuItem NavigateUrl="~/Persons.aspx?type=1&amp;mode=1" 
+                                                Text="Добавить кошку">
+                                            </dx:MenuItem>
+                                            <dx:MenuItem Text="Добавить котенка" NavigateUrl="~/Kittens.aspx">
+                                            </dx:MenuItem>
+                                        </Items>
+                                    </dx:MenuItem>
+                                    <dx:MenuItem Name="admin_subjects" Text="Полезные статьи" 
+                                        NavigateUrl="~/Articles.aspx">
+                                    </dx:MenuItem>
+                                    <dx:MenuItem Name="admin_contacts" Text="Контактная информация" 
+                                        NavigateUrl="~/ContextPage.aspx?contextId=10">
+                                    </dx:MenuItem>
+                                    <dx:MenuItem NavigateUrl="~/Admin/Default.aspx?Exit=1" 
+                                        Text="Выход из режима администратора">
+                                        <SubMenuStyle SeparatorHeight="1px" SeparatorWidth="100%" />
+                                    </dx:MenuItem>
+                                </Items>
+                            </dx:MenuItem>
+                        </Items>
+                        <ItemStyle Font-Bold="True" Font-Names="Georgia" Font-Size="12pt" 
+                            ForeColor="#006600" Wrap="False">
+                        <SelectedStyle BackColor="Transparent">
+                            <Border BorderStyle="None" />
+                        </SelectedStyle>
+                        <HoverStyle BackColor="Transparent">
+                            <Border BorderColor="#009900" />
+                        </HoverStyle>
+                        </ItemStyle>
+                        <Border BorderStyle="None" />
+                    </dx:ASPxMenu>
+                 </td>
+                <td align="center">
+                 <a href="http://www.fife.ru" target="_blank"><img src="Images/fife.jpg" alt="" border="none" /></a>
+                 &nbsp;
+                 <a href="mailto:wonderfleur@yandex.ru" title="Написать письмо">
+                    <img src="Images/mail.png" alt="" border="none" height="48" width="48" 
+                        title="Написать письмо" /></a>
+                 </td>
+            </tr>
+            <tr>
+                <td align="left" colspan="2" width="100%" 
+                    
+                    
+                    style="background-image: url(Images/title_right.jpg); background-repeat: repeat;">
+                    <dx:ASPxImage ID="TitleImage" runat="server" 
+                        ImageUrl="~/Images/wonderfleur.jpg">
+                    </dx:ASPxImage>
+                </td>
+                <td class="style2" rowspan="2" valign="top" 
+                    
+                    style="background-position: right; background-color: #ECFFEC; padding-right: 10px; background-image: url(Images/gradient2.png); background-repeat: repeat-y;">
+                    <dx:ASPxNavBar ID="NavBar2" runat="server" AllowExpanding="False" 
+                        ClientIDMode="AutoID" 
+                        SpriteCssFilePath="~/App_Themes/RedWine/{0}/sprite.css" 
+                        ShowExpandButtons="False" BackColor="#FCF2D8" Width="200px">
+                        <Groups>
+                            <dx:NavBarGroup Text="Последние новости" Name="News" NavigateUrl="News">
+                                <Items>
+                                    <dx:NavBarItem NavigateUrl="~/Persons.aspx?Type=0" Text="Коты">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem NavigateUrl="~/Persons.aspx?Type=1" Text="Кошки">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem NavigateUrl="~/Persons.aspx?Type=3" Text="Ветераны питомника">
+                                    </dx:NavBarItem>
+                                </Items>
+                            </dx:NavBarGroup>
+                            <dx:NavBarGroup Text="Выставки" Name="Shows">
+                                <Items>
+                                    <dx:NavBarItem Text="История питомника">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="О британских кошках">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="Контакты">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="Наши достижения">
+                                    </dx:NavBarItem>
+                                </Items>
+                            </dx:NavBarGroup>
+                            <dx:NavBarGroup Text="Полезные статьи" Name="Articles">
+                                <Items>
+                                    <dx:NavBarItem Text="Сайты друзей">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="Наш баннер">
+                                    </dx:NavBarItem>
+                                </Items>
+                            </dx:NavBarGroup>
+                        </Groups>
+                        <LinkStyle>
+                            <Font Overline="False" Underline="False"></Font>
+                        </LinkStyle>
+                        <GroupHeaderStyle BackColor="Transparent">
+                            <Paddings Padding="0px" />
+                            <Border BorderStyle="None" />
+                        </GroupHeaderStyle>
+                        <ItemStyle BackColor="#FAF0DC" ForeColor="#5A8200" Wrap="True" Height="40px">
+                        <SelectedStyle>
+                            <Border BorderStyle="None" />
+                        </SelectedStyle>
+                        <HoverStyle Font-Bold="True">
+                            <Border BorderColor="Transparent" />
+                        </HoverStyle>
+                        <Paddings PaddingLeft="40px" />
+                        <BackgroundImage HorizontalPosition="left" Repeat="NoRepeat" 
+                            VerticalPosition="center" ImageUrl="~/Images/lapa.png" />
+                        <Border BorderColor="#D2C8AA" />
+                        </ItemStyle>
+                        <Border BorderColor="#D2C8AA" />
+                        <GroupContentStyle BackColor="White">
+                            <Border BorderColor="#D2C8AA" />
+                        </GroupContentStyle>
+                        <GroupHeaderTemplate>
+                            <table cellpadding="0" cellspacing="0" class="style3">
+                                <tr>
+    								<td>
+                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/title2_left.jpg" />
+                                    </td>
+									<td style="background-position: 0px 0px; width:100%; background-image: url(Images/title2_center.jpg); background-repeat: repeat-x;">
+									    <asp:Label ID="lbName" runat="server" Text="Label" ForeColor="#645A50"></asp:Label>
+									</td>
+									<td>
+                                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/title2_right.jpg" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </GroupHeaderTemplate>
+                        <BackgroundImage ImageUrl="~/Images/bg_c.jpg" Repeat="RepeatX" 
+                            VerticalPosition="top" />
+                    </dx:ASPxNavBar>
+                </td>
+            </tr>
+            <tr>
+                <td 
+                    valign="top" align="center" 
+                    class="style2" 
+                    
+                    style="background-position: left; padding: 0px; margin: 10px; clip: rect(auto, auto, auto, auto); background-image: url(Images/gradient1.png); background-repeat: repeat-y;">
+                    <div style="background-position: top; position: relative; top: -120px; margin-left: 10px; background-image: url(Images/bg_c.jpg); background-repeat: repeat-x; background-color: #FCF2D8; table-layout: fixed;">
+                    <dx:ASPxNavBar ID="NavBar1" runat="server" AllowExpanding="False" 
+                        ClientIDMode="AutoID" 
+                        SpriteCssFilePath="~/App_Themes/RedWine/{0}/sprite.css" 
+                        ShowExpandButtons="False" BackColor="Transparent" Width="250px">
+                        <Groups>
+                            <dx:NavBarGroup Text="Питомцы" Name="Pets">
+                                <Items>
+                                    <dx:NavBarItem NavigateUrl="~/Persons.aspx?Type=0" Text="Коты" Name="Tomcats">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem NavigateUrl="~/Persons.aspx?Type=1" Text="Кошки" Name="Cats">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem NavigateUrl="~/Persons.aspx?Type=3" Text="Ветераны питомника" Name="Veterans">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Name="Litters" NavigateUrl="~/litters.aspx" 
+                                        Text="Ожидаемые пометы">
+                                    </dx:NavBarItem>
+                                </Items>
+                            </dx:NavBarGroup>
+                            <dx:NavBarGroup Text="О питомнике" Name="About">
+                                <Items>
+                                    <dx:NavBarItem Text="История питомника" 
+                                        NavigateUrl="~/ContextPage.aspx?contextId=5" Name="History">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="О британских кошках" 
+                                        NavigateUrl="~/ContextPage.aspx?contextId=9" Name="About">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="Контакты" NavigateUrl="~/ContextPage.aspx?contextId=10" Name="Contacts">
+                                    </dx:NavBarItem>
+                                </Items>
+                            </dx:NavBarGroup>
+                            <dx:NavBarGroup Name="Achievements" Text="Наши достижения">
+                            </dx:NavBarGroup>
+                            <dx:NavBarGroup Text="Ссылки" Name="Links">
+                                <Items>
+                                    <dx:NavBarItem Text="Сайты друзей" 
+                                        NavigateUrl="~/ContextPage.aspx?contextId=11" Name="Friends">
+                                    </dx:NavBarItem>
+                                    <dx:NavBarItem Text="Наш баннер" NavigateUrl="~/ContextPage.aspx?contextId=12" Name="Banner">
+                                    </dx:NavBarItem>
+                                </Items>
+                            </dx:NavBarGroup>
+                        </Groups>
+                        <LinkStyle>
+                            <Font Overline="False" Underline="False"></Font>
+                        </LinkStyle>
+                        <GroupHeaderStyle BackColor="Transparent">
+                            <Paddings Padding="0px" />
+                            <Border BorderStyle="None" />
+                        </GroupHeaderStyle>
+                        <ItemStyle BackColor="#FAF0DC" ForeColor="#5A8200" Height="40px">
+                        <SelectedStyle>
+                            <Border BorderStyle="None" />
+                        </SelectedStyle>
+                        <HoverStyle Font-Bold="True">
+                            <Border BorderColor="Transparent" />
+                        </HoverStyle>
+                        <Paddings PaddingLeft="40px" />
+                        <BackgroundImage HorizontalPosition="left" Repeat="NoRepeat" 
+                            VerticalPosition="center" ImageUrl="~/Images/lapa.png" />
+                        <Border BorderColor="Transparent" />
+                        </ItemStyle>
+                        <Border BorderColor="#D2C8AA" />
+                        <GroupContentStyle BackColor="White">
+                            <Border BorderColor="#D2C8AA" />
+                        </GroupContentStyle>
+                        <GroupHeaderTemplate>
+                            <table cellpadding="0" cellspacing="0" class="style3">
+                                <tr>
+    								<td>
+                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/title2_left.jpg" />
+                                    </td>
+									<td style="background-position: 0px 0px; width:100%; background-image: url(Images/title2_center.jpg); background-repeat: repeat-x;">
+									    <asp:Label ID="lbName" runat="server" Text="Label" ForeColor="#645A50"></asp:Label>
+									</td>
+									<td>
+                                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/title2_right.jpg" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </GroupHeaderTemplate>
+                    </dx:ASPxNavBar>
+                    </div>
+                </td>
+                <td style="background-position: left top; padding: 10px; margin: 10px; border-spacing: 10px; clip: rect(auto, auto, auto, auto); background-color: #FCF6E8; background-image: url(Images/bg_c.jpg); background-repeat: repeat-x;" 
+                    align="justify" valign="top" width="100%">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td 
+                    class="style2" 
+                    style="background-image: url(Images/gradient1.png); background-repeat: repeat-y; background-position: left">
+                    &nbsp;</td>
+                <td align="center" class="style2" width="100%" 
+                    style="color: #695D3C; font-family: Verdana; font-size: 11px; font-weight: bold;"  >
+                   <dx:ASPxRoundPanel ID="rpCopyRight" runat="server" Width="100%" 
+                        BackColor="#F2F2F2" CssFilePath="~/App_Themes/Red Wine/{0}/styles.css" 
+                        CssPostfix="RedWine" HeaderText="К Вашему сведению...">
+                        <TopEdge>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpTopEdge.gif" 
+                                Repeat="RepeatX" VerticalPosition="Top" />
+                        </TopEdge>
+                        <LeftEdge>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpLeftEdge.gif" 
+                                Repeat="RepeatY" VerticalPosition="Top" />
+                        </LeftEdge>
+                        <BottomRightCorner Height="5px" 
+                            Url="~/App_Themes/Red Wine/Web/rpBottomRight.png" Width="5px" />
+                        <ContentPaddings Padding="14px" />
+                        <NoHeaderTopRightCorner Height="5px" 
+                            Url="~/App_Themes/Red Wine/Web/rpNoHeaderTopRight.png" Width="5px" />
+                        <RightEdge>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpRightEdge.gif" 
+                                Repeat="RepeatY" VerticalPosition="Top" />
+                        </RightEdge>
+                        <HeaderRightEdge>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpHeaderRightEdge.gif" 
+                                Repeat="NoRepeat" VerticalPosition="Top" />
+                        </HeaderRightEdge>
+                        <Border BorderColor="DarkGray" BorderStyle="Solid" BorderWidth="1px" />
+                        <HeaderLeftEdge>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpHeaderLeftEdge.gif" 
+                                Repeat="NoRepeat" VerticalPosition="Top" />
+                        </HeaderLeftEdge>
+                        <HeaderStyle BackColor="#D45582" HorizontalAlign="Left">
+                        <Border BorderColor="#8A0A37" BorderStyle="Solid" BorderWidth="1px" />
+                        </HeaderStyle>
+                        <BottomEdge>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpBottomEdge.gif" 
+                                Repeat="RepeatX" VerticalPosition="Top" />
+                        </BottomEdge>
+                        <TopRightCorner Height="5px" Url="~/App_Themes/Red Wine/Web/rpTopRight.png" 
+                            Width="5px" />
+                        <HeaderContent>
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpHeaderBackground.gif" 
+                                Repeat="RepeatX" VerticalPosition="Top" />
+                        </HeaderContent>
+                        <NoHeaderTopEdge BackColor="#F2F2F2">
+                            <BackgroundImage ImageUrl="~/App_Themes/Red Wine/Web/rpNoHeaderTopEdge.gif" 
+                                Repeat="RepeatX" VerticalPosition="Top" />
+                        </NoHeaderTopEdge>
+                        <NoHeaderTopLeftCorner Height="5px" 
+                            Url="~/App_Themes/Red Wine/Web/rpNoHeaderTopLeft.png" Width="5px" />
+                        <PanelCollection>
+                            <dxp:PanelContent runat="server">
+                    <asp:Panel ID="pnlCopyRightRu" runat="server">
+                    Kотята из питомника отдаются лично заводчиком, с 
+                    письменным оформлением соответствующего договора. Никакие посредники не 
+                    используются!
+                    <br />
+                    <br />
+                    Все коты и кошки питомника &quot;закрыты&quot; для вязок с животными других владельцев.
+                    <br />
+                    <br />
+                    Все права на материалы, находящиеся на сайтах 
+                    www.briad.ru и www.wondwefleur.ru охраняются в соответствии с законодательством 
+                    РФ, в том числе, об авторском праве и смежных правах. Использование любых 
+                    материалов сайта возможно только с разрешения владельца.</asp:Panel>
+                    <asp:Panel ID="pnlCopyRightEn" runat="server" Visible="False">
+                    Kittens are sold from the nursery by the breeder personally, 
+                    after the signing of the corresponding written contract. 
+                    There are no any intermediaries!
+                    <br />
+                    <br />
+                    All cats in the cattery do not mate with "outside" animals of other owners.
+                    <br />
+                    <br />
+                    All materials published on www.briad.ru and www.wonderfleur.ru, 
+                    are protected in accordance with the laws of Russia, 
+                    including copyright and related rights. Use of any site materials is possible only with 
+                    the permission of the owner.</asp:Panel>                            
+                    </dxp:PanelContent>
+                    </PanelCollection>
+                        <TopLeftCorner Height="5px" Url="~/App_Themes/Red Wine/Web/rpTopLeft.png" 
+                            Width="5px" />
+                        <BottomLeftCorner Height="5px" Url="~/App_Themes/Red Wine/Web/rpBottomLeft.png" 
+                            Width="5px" />
+                    </dx:ASPxRoundPanel>
+                </td>
+                <td class="style2" 
+                    style="background-image: url(Images/gradient2.png); background-repeat: repeat-y; background-position: right">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td 
+                    class="style2_footer" height="50">
+                    &nbsp;</td>
+                <td class="style2_footer" align="center">
+<!-- Yandex.Metrika informer -->
+<a href="http://metrika.yandex.ru/stat/?id=7155121&amp;from=informer"
+target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/7155121/3_0_FFC34AFF_EDA32AFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter7155121 = new Ya.Metrika({id:7155121, enableAll: true});
+        }
+        catch(e) { }
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/7155121" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!--Rating@Mail.ru counter-->
+<a target="_top" href="http://top.mail.ru/jump?from=2062587">
+<img src="http://d8.c7.bf.a1.top.mail.ru/counter?id=2062587;t=242" 
+border="0" height="31" width="88" alt="Рейтинг@Mail.ru"></a>
+<!--// Rating@Mail.ru counter-->                
+                </td>
+                <td class="style2_footer">
+                    &nbsp;</td>
+            </tr>
+        </table>
+     </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,47 @@
+DATABASE
+<add name="DATABASE1" connectionString="data source=sql2005-new.nthost.ru;Trusted_connection=false;uid=british_wonderfleur;pwd=british;Initial Catalog=british_wonderfleur1" providerName="System.Data.SqlClient" />
+
+
+1. Доступ в панель управления:
+Для администрирования и настройки всех функциональных возможностей
+Вашего аккаунта, используйте, пожалуйста, специальную контрольную
+панель: http://u.nthost.ru
+
+Login: british-11096
+Password: TZkY8bwi
+
+Временный адрес доступа на время переноса или регистрации Вашего домена:
+http://d1638064.res246.nthost.ru
+
+2. Доступ по FTP:
+Host Name: win19.nthost.ru
+Login: british-11096
+Password: TZkY8bwi
+
+3. Почта
+Для настройки функциональных возможностей почты/создания почтовых ящиков/алиасов/перенаправлений/листов рассылок используйте специальный раздел "Почта" в Контрольной панели;
+
+Как создать ящик в контрольной панели:
+http://support.nthost.ru/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=40&nav=0
+
+- Для чтения/отправки почты:
+a) с использованием почтового клиента
+Для авторизации и получения почты по протоколу POP3:
+POP3/SMTP Server: mail.domainname
+login: username@domainname (имя почтового ящика)
+ pass: yourpass (пароль, который вы установили при создании ящика)
+domainname - имя Вашего домена, например, petya.ru
+
+Возможность отправки почты через наш SMTP предоставляется только с включенной SMTP-авторизацией.
+
+Как настроить созданный ящик в почтовом клиенте:
+Настройка Outlook  http://support.nthost.ru/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=36&nav=0,10
+Настройка The Bat! http://support.nthost.ru/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=37&nav=0,10
+Настройка Mozilla Thunderbird http://support.nthost.ru/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=181&nav=0,10
+
+
+б) с использованием WebMail
+зайти в него можно через контрольную панель:
+- Почта - Выбираете почтовый ящик -> Webmail -> Launch
+или по адресу: http://mail.имявашегодомена -WebMail
+- Вводите имя почтового ящика и пароль;
